@@ -1,17 +1,17 @@
+package mariospizza;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MariosPizzaProgram {
+    ArrayList<Pizza> aktueltMenukort = new ArrayList<>();
+
     public static void main(String[] args) {
         new MariosPizzaProgram().menukort();
-
-        run();
+        new MariosPizzaProgram().run();
     }
 
-
     public void menukort(){
-        ArrayList<Pizza> aktueltMenukort = new ArrayList<>();
-
         Pizza pizza1 = new Pizza("Vesuvio", 1, 75);
         Pizza pizza2 = new Pizza("Amerikaner", 2, 80);
 
@@ -21,27 +21,29 @@ public class MariosPizzaProgram {
         System.out.println("Menukort: ");
         for (int i = 0; i<aktueltMenukort.size(); i++){
             System.out.println(aktueltMenukort.get(i).getNummer() + ". " +
-                    (aktueltMenukort.get(i).getPizzaNavn() + "\t" + aktueltMenukort.get(i).getPris()));
+                    (aktueltMenukort.get(i).getPizzaNavn() +
+                        "\t" + aktueltMenukort.get(i).getPris()));
         }
     }
 
     public void run(){
         Scanner input = new Scanner(System.in);
 
+        System.out.print("Vælg funktion: ");
         int choice = input.nextInt();
-
         switch (choice){
             case 1:
                 menukort();
                 break;
             case 2:
-                tilføjOrdre();
+                Ordrer ordrer = new Ordrer();
+                ordrer.tilføjOrdre();
                 break;
             case 3:
-                aktuelOrdreListe();
+                //aktuelOrdreListe();
                 break;
             case 4:
-                odrerHistorik();
+                //odrerHistorik();
                 break;
 
         }

@@ -1,3 +1,5 @@
+package mariospizza;
+
 public class Pizza {
     private String pizzaNavn;
     private int nummer;
