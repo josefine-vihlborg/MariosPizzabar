@@ -2,8 +2,8 @@
 
 Gruppe 1: 
 
-Emma Rebner 
+Emma Rebner (github-navn: EmmaRebner)
 
-Josefine Vihlborg Nielsen 
+Josefine Vihlborg Nielsen (github-navn: josefine-vihlborg) 
 
-Christian Walmar 
+Christian Walmar (github-navn: ChristianWalmar)
