@@ -8,8 +8,6 @@ public class MariosPizzaProgram {
 
     public static void main(String[] args) {
         MariosPizzaProgram mariosPizzaProgram = new MariosPizzaProgram();
-        //new MariosPizzaProgram().menukort();
-        //new MariosPizzaProgram().run();
         mariosPizzaProgram.menukort();
         mariosPizzaProgram.run();
     }
@@ -67,10 +65,14 @@ public class MariosPizzaProgram {
 
     public void run(){
         Scanner input = new Scanner(System.in);
-
         Ordrer ordrer = new Ordrer();
-
-        System.out.print("Vælg funktion: ");
+        System.out.println("");
+        System.out.println("Vælg funktion ved, at indtaste det tilsvarende tal: ");
+        System.out.println("1. Vis menukort.");
+        System.out.println("2. Start ny ordre.");
+        System.out.println("3. Vis alle ordrer.");
+        System.out.println("4. Vis ordre historik.");
+        System.out.print("Dit valg: ");
         int choice = input.nextInt();
         switch (choice){
             case 1:
@@ -80,7 +82,7 @@ public class MariosPizzaProgram {
                 ordrer.tilføjOrdre();
                 break;
             case 3:
-                //ordreListe();
+                ordrer.ordreListe();
                 break;
             case 4:
                 //odrerHistorik();

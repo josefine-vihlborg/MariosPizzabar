@@ -7,6 +7,7 @@ public class Ordrer {
   ArrayList<ArrayList> ordreliste = new ArrayList<>();
 
   public void tilføjOrdre() {
+    MariosPizzaProgram exitObject = new MariosPizzaProgram();
     System.out.print("Afgiv din bestilling og skriv numrene på de pizzaer du vil bestille: ");
     ArrayList<Integer> ordre = new ArrayList<>();
     while (true) {
@@ -18,16 +19,15 @@ public class Ordrer {
 
       } else if (tilføjNummer == 0) {
         ordreliste.add(ordre);
-        for (int i = 0; i < ordre.size(); i++) {
-          System.out.println(ordre.get(i));
-        }
-        //break
+        exitObject.run(); // Sådan at man ryger tilbage til program menuen.
       } else {
         System.out.print("Dette er ikke en pizza. Tast et nummer fra menuen: ");
       }
       }
     }
   public void ordreListe() {
-
+    for (int i = 0; i < ordreliste.size(); i++){
+      System.out.println(ordreliste.get(i));
+    }
   }
 }
