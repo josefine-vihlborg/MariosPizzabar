@@ -4,24 +4,26 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ordrer {
-  ArrayList<Pizza> ordrer = new ArrayList<>();
+  ArrayList<Integer> ordrer = new ArrayList<>();
 
   public void tilføjOrdre() {
     Scanner scan = new Scanner(System.in);
-    MariosPizzaProgram program = new MariosPizzaProgram();
 
-    System.out.print("Skriv nummeret på den pizza du ønsker: ");
+    System.out.print("Afgiv din bestilling og skriv numrene på de pizzaer du vil bestille: ");
     int tilføjNummer = scan.nextInt();
+    //while ()
+    ordrer.add(17);
 
-    for (int i = 1; i < program.aktueltMenukort.size(); i++) {
+    /*
+    for (int i = 0; i < program.aktueltMenukort.size(); i++) {
       if (tilføjNummer == i) {
-        //ordrer.add(program.aktueltMenukort.get(i));
+        ordrer.add(program.aktueltMenukort.get(i));
         System.out.println("Hej");
-      }else {
+      } else {
         System.out.println("Hej 2");
       }
     }
-
+    */
 
   }
 }
