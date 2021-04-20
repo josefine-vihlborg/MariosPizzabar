@@ -80,7 +80,7 @@ public class MariosPizzaProgram {
                 ordrer.tilføjOrdre();
                 break;
             case 3:
-                //aktuelOrdreListe();
+                //ordreListe();
                 break;
             case 4:
                 //odrerHistorik();

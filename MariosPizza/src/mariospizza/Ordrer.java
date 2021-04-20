@@ -4,26 +4,30 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ordrer {
-  ArrayList<Integer> ordrer = new ArrayList<>();
+  ArrayList<ArrayList> ordreliste = new ArrayList<>();
 
   public void tilføjOrdre() {
-    Scanner scan = new Scanner(System.in);
-
     System.out.print("Afgiv din bestilling og skriv numrene på de pizzaer du vil bestille: ");
-    int tilføjNummer = scan.nextInt();
-    //while ()
-    ordrer.add(17);
+    ArrayList<Integer> ordre = new ArrayList<>();
+    while (true) {
+      Scanner scan = new Scanner(System.in);
+      int tilføjNummer = scan.nextInt();
+      if (tilføjNummer > 0 && tilføjNummer <= 20) {
+        System.out.print("Indtast en pizza mere: ");
+        ordre.add(tilføjNummer);
 
-    /*
-    for (int i = 0; i < program.aktueltMenukort.size(); i++) {
-      if (tilføjNummer == i) {
-        ordrer.add(program.aktueltMenukort.get(i));
-        System.out.println("Hej");
+      } else if (tilføjNummer == 0) {
+        ordreliste.add(ordre);
+        for (int i = 0; i < ordre.size(); i++) {
+          System.out.println(ordre.get(i));
+        }
+        //break
       } else {
-        System.out.println("Hej 2");
+        System.out.print("Dette er ikke en pizza. Tast et nummer fra menuen: ");
+      }
       }
     }
-    */
+  public void ordreListe() {
 
   }
 }
