@@ -74,6 +74,7 @@ public class MariosPizzaProgram {
         System.out.println("4. Vis ordre historik.");
         System.out.print("Dit valg: ");
         int choice = input.nextInt();
+        // while loop
         switch (choice){
             case 1:
                 menukort();
