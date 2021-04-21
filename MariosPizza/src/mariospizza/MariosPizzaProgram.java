@@ -56,39 +56,41 @@ public class MariosPizzaProgram {
         aktueltMenukort.add(pizza20);
 
         System.out.println("Menukort: ");
-        for (int i = 0; i<aktueltMenukort.size(); i++){
+        for (int i = 0; i < aktueltMenukort.size(); i++) {
             System.out.println(aktueltMenukort.get(i).getNummer() + ". " +
-                    (aktueltMenukort.get(i).getPizzaNavn() +
-                        "\t" + aktueltMenukort.get(i).getPris()));
+                (aktueltMenukort.get(i).getPizzaNavn() +
+                    "\t" + aktueltMenukort.get(i).getPris()));
         }
     }
 
-    public void run(){
+    public void run() {
         Scanner input = new Scanner(System.in);
         Ordrer ordrer = new Ordrer();
-        System.out.println("");
-        System.out.println("Vælg funktion ved, at indtaste det tilsvarende tal: ");
-        System.out.println("1. Vis menukort.");
-        System.out.println("2. Start ny ordre.");
-        System.out.println("3. Vis alle ordrer.");
-        System.out.println("4. Vis ordre historik.");
-        System.out.print("Dit valg: ");
-        int choice = input.nextInt();
-        // while loop
-        switch (choice){
-            case 1:
-                menukort();
-                break;
-            case 2:
-                ordrer.tilføjOrdre();
-                break;
-            case 3:
-                ordrer.ordreListe();
-                break;
-            case 4:
-                //odrerHistorik();
-                break;
 
+        while (true) {
+            System.out.println("");
+            System.out.println("Vælg funktion ved, at indtaste det tilsvarende tal: ");
+            System.out.println("1. Vis menukort.");
+            System.out.println("2. Start ny ordre.");
+            System.out.println("3. Vis alle ordrer.");
+            System.out.println("4. Vis ordre historik.");
+            System.out.print("Dit valg: ");
+            int choice = input.nextInt();
+
+            switch (choice) {
+                case 1:
+                    menukort();
+                    break;
+                case 2:
+                    ordrer.tilføjOrdre();
+                    break;
+                case 3:
+                    ordrer.ordreListe();
+                    break;
+                case 4:
+                    //odrerHistorik();
+                    break;
+            }
         }
     }
 }
