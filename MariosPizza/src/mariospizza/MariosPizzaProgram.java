@@ -88,7 +88,7 @@ public class MariosPizzaProgram {
                     ordrer.ordreListe();
                     break;
                 case 4:
-                    //odrerHistorik();
+                    odrerHistorik();
                     break;
             }
         }
