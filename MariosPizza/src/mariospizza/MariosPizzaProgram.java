@@ -1,12 +1,13 @@
 package mariospizza;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MariosPizzaProgram {
     ArrayList<Pizza> aktueltMenukort = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         MariosPizzaProgram mariosPizzaProgram = new MariosPizzaProgram();
         mariosPizzaProgram.menukort();
         mariosPizzaProgram.run();
@@ -63,7 +64,7 @@ public class MariosPizzaProgram {
         }
     }
 
-    public void run() {
+    public void run() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         Ordrer ordrer = new Ordrer();
 
@@ -73,7 +74,8 @@ public class MariosPizzaProgram {
             System.out.println("1. Vis menukort.");
             System.out.println("2. Start ny ordre.");
             System.out.println("3. Vis alle ordrer.");
-            System.out.println("4. Vis ordre historik.");
+            System.out.println("4. Gem ordre historik i en fil.");
+            System.out.println("5. Vis ordre historik fra en fil.");
             System.out.print("Dit valg: ");
             int choice = input.nextInt();
 
@@ -88,7 +90,10 @@ public class MariosPizzaProgram {
                     ordrer.ordreListe();
                     break;
                 case 4:
-                    odrerHistorik();
+                    ordrer.gemOrdrerHistorik();
+                    break;
+                case 5:
+                    ordrer.visOrdrerHistorik();
                     break;
             }
         }
