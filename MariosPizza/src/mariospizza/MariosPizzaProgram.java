@@ -1,11 +1,15 @@
 package mariospizza;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MariosPizzaProgram {
     ArrayList<Pizza> aktueltMenukort = new ArrayList<>();
+
 
     public static void main(String[] args) throws FileNotFoundException {
         MariosPizzaProgram mariosPizzaProgram = new MariosPizzaProgram();
@@ -60,13 +64,14 @@ public class MariosPizzaProgram {
         for (int i = 0; i < aktueltMenukort.size(); i++) {
             System.out.println(aktueltMenukort.get(i).getNummer() + ". " +
                 (aktueltMenukort.get(i).getPizzaNavn() +
-                    "\t" + aktueltMenukort.get(i).getPris()));
+                    "\t" + aktueltMenukort.get(i).getPris()) + " kr.");
         }
     }
 
     public void run() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         Ordrer ordrer = new Ordrer();
+        OrdrerHistorik ordrerHistorik = new OrdrerHistorik();
 
         while (true) {
             System.out.println("");
@@ -75,7 +80,7 @@ public class MariosPizzaProgram {
             System.out.println("2. Start ny ordre.");
             System.out.println("3. Vis alle ordrer.");
             System.out.println("4. Gem ordre historik i en fil.");
-            System.out.println("5. Vis ordre historik fra en fil.");
+            System.out.println("5. Vis ordre historik fra en fil.\n");
             System.out.print("Dit valg: ");
             int choice = input.nextInt();
 
@@ -90,10 +95,10 @@ public class MariosPizzaProgram {
                     ordrer.ordreListe();
                     break;
                 case 4:
-                    ordrer.gemOrdrerHistorik();
+                    ordrerHistorik.gemOrdrerHistorik();
                     break;
                 case 5:
-                    ordrer.visOrdrerHistorik();
+                    ordrerHistorik.visOrdrerHistorik();
                     break;
             }
         }

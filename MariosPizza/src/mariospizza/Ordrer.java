@@ -1,8 +1,6 @@
 package mariospizza;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -10,10 +8,16 @@ import java.util.Scanner;
 
 public class Ordrer {
     private ArrayList<Ordre> ordreListe = new ArrayList<>();
-    private File file = new File("ordreHistorik.txt");
-    private Scanner scan = new Scanner(System.in);
+
+    public ArrayList<Ordre> getOrdreListe() {
+        return ordreListe;
+    }
+    public void setOrdreListe(ArrayList<Ordre> ordreListe) {
+        this.ordreListe = ordreListe;
+    }
 
     public void tilføjOrdre() {
+        Scanner scan = new Scanner(System.in);
         System.out.print("Kundens navn: ");
         String kundeNavn = scan.nextLine();
         Ordre ordre = new Ordre(kundeNavn, LocalDateTime.now(),new ArrayList<Integer>());
@@ -42,24 +46,7 @@ public class Ordrer {
             Ordre temp = ordreListe.get(i);
             System.out.println("\nNavn: " + temp.getKundeNavn());
             System.out.println("Dato: " + time.format(fmt));
-            System.out.println("Pizzaer bestilt: " + temp.getPizzaNummerListe() + "\n");
-        }
-    }
-
-    public void gemOrdrerHistorik() throws FileNotFoundException {
-        System.out.println("Ordrehistorikken er nu gemt.");
-        PrintStream output = new PrintStream(file);
-        for (int i = 0; i < ordreListe.size(); i++){
-            output.println(ordreListe.get(i).getKundeNavn());
-            output.println(ordreListe.get(i).getDatoTid());
-            output.println(ordreListe.get(i).getPizzaNummerListe());
-        }
-    }
-
-    public void visOrdrerHistorik() throws FileNotFoundException {
-        Scanner fileReader = new Scanner(file);
-        while (fileReader.hasNext()){
-            System.out.println(fileReader.nextLine());
+            System.out.println("Pizzaer bestilt: " + temp.getPizzaNummerListe());
         }
     }
 }
