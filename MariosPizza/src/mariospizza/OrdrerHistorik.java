@@ -7,14 +7,12 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class OrdrerHistorik {
-  private Ordrer ordrer = new Ordrer();
   private File file = new File("ordreHistorik.txt");
 
-  public void gemOrdrerHistorik() throws FileNotFoundException {
+  public void gemOrdrerHistorik(Ordrer ordrer) throws FileNotFoundException {
     System.out.println("Ordrehistorikken er nu gemt.");
-    PrintStream output = new PrintStream(new FileOutputStream(file,true));
-    for (int i = 0; i < ordrer.getOrdreListe().size(); i++){
-      output.println("hej");
+    PrintStream output = new PrintStream(new FileOutputStream(file, true));
+    for (int i = 0; i < ordrer.getOrdreListe().size(); i++) {
       output.append(ordrer.getOrdreListe().get(i).getKundeNavn() + " ");
       output.append(ordrer.getOrdreListe().get(i).getDatoTid().toString() + " ");
       output.append(ordrer.getOrdreListe().get(i).getPizzaNummerListe().toString() + "\n");
@@ -22,10 +20,10 @@ public class OrdrerHistorik {
     output.close();
   }
 
-  public void visOrdrerHistorik() throws FileNotFoundException {
+  public void hentOrdrerHistorik() throws FileNotFoundException {
     System.out.println("Totale ordrer historik:");
     Scanner fileReader = new Scanner(file);
-    while (fileReader.hasNext()){
+    while (fileReader.hasNext()) {
       System.out.println(fileReader.nextLine());
     }
   }

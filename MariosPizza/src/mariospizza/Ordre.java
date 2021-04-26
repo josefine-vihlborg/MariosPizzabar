@@ -15,7 +15,7 @@ public class Ordre {
     this.datoTid = datoTid;
   }
 
-  public void tilføjTilListe(int pizzaNummer){
+  public void tilføjTilListe(int pizzaNummer) {
     pizzaNummerListe.add(pizzaNummer);
   }
 
@@ -23,6 +23,7 @@ public class Ordre {
   public ArrayList<Integer> getPizzaNummerListe() {
     return pizzaNummerListe;
   }
+
   public void setPizzaNummerListe(ArrayList<Integer> pizzaNummerListe) {
     this.pizzaNummerListe = pizzaNummerListe;
   }
@@ -30,6 +31,7 @@ public class Ordre {
   public String getKundeNavn() {
     return kundeNavn;
   }
+
   public void setKundeNavn(String kundeNavn) {
     this.kundeNavn = kundeNavn;
   }
@@ -37,6 +39,7 @@ public class Ordre {
   public LocalDateTime getDatoTid() {
     return datoTid;
   }
+
   public void setDatoTid(LocalDateTime datoTid) {
     this.datoTid = datoTid;
   }
